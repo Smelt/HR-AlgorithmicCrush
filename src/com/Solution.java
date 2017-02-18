@@ -19,9 +19,31 @@ public class Solution {
 			}
 		}
 		
-		process(arr,commands);
+		processCommands(arr,commands);
 	}
 	
-	private static void process(int[] arr, )
+	private static void processCommands(int[] arr, int[][] commands){
+		for(int i = 0; i < commands.length; i++){
+			int a = commands[i][0];
+			int b = commands[i][1];
+			int additive = commands[i][2];
+			
+			for(int x = a - 1; x < b; x++){
+				arr[x] += additive;
+			}
+		}
+		
+		findMax(arr);
+	}
+	
+	private static void findMax(int[] arr){
+		int max = Integer.MIN_VALUE;
+		for(int i = 0; i < arr.length; i++){
+			if(arr[i] > max){
+				max = arr[i];
+			}
+		}
+		System.out.println(max);
+	}
 
 }
