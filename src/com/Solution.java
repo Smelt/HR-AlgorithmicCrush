@@ -10,7 +10,7 @@ public class Solution {
 		int arrSize = sc.nextInt();
 		int  commandSize = sc.nextInt();
 		
-		int[] arr = new int[arrSize];
+		long[] arr = new long[arrSize];
 		int[][] commands = new int[commandSize][3];
 		
 		for(int i = 0; i < commandSize; i++){
@@ -22,7 +22,7 @@ public class Solution {
 		processCommands(arr,commands);
 	}
 	
-	private static void processCommands(int[] arr, int[][] commands){
+	private static void processCommands(long[] arr, int[][] commands){
 		for(int i = 0; i < commands.length; i++){
 			int a = commands[i][0];
 			int b = commands[i][1];
@@ -36,8 +36,8 @@ public class Solution {
 		findMax(arr);
 	}
 	
-	private static void findMax(int[] arr){
-		int max = Integer.MIN_VALUE;
+	private static void findMax(long[] arr){
+		long max = Integer.MIN_VALUE;
 		for(int i = 0; i < arr.length; i++){
 			if(arr[i] > max){
 				max = arr[i];
