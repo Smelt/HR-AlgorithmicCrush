@@ -12,14 +12,18 @@ public class Solution {
 		
 		long[] arr = new long[arrSize];
 		int[][] commands = new int[commandSize][3];
-		
-		for(int i = 0; i < commandSize; i++){
-			for(int x = 0; x < 3; x++){
-				commands[i][x] = sc.nextInt();
-			}
+		long[] boost = new long[arrSize];
+		for(int i = 0; i < commandSize; i++){		
+				int a = sc.nextInt();
+				int b = sc.nextInt();
+				int additive = sc.nextInt();
+				for(int x = a - 1; x < b; x++){ 
+					boost[x] += additive;
+				}
+			
 		}
 		
-		processCommands(arr,commands);
+		findMax(boost);
 	}
 	
 	private static void processCommands(long[] arr, int[][] commands){
